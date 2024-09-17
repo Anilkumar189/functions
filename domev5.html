@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #d1{
+    font-size:40px;
+}    </style>
+     
+</head>
+<body>
+    <center>
+        <h1 style="color:red">TOGGLE BUTTON SHOW TRUE/FALSE</h1>
+    <button onclick="ac()">TOGGLE</button>
+    <span id="d1"></span>
+</center>
+<script>
+    var ar=["true","false"]
+    i=0;
+    function ac(){
+        var x=document.getElementById("d1").innerHTML=ar[i]
+        i=(i+1)%ar.length
+    }
+</script>
+</body>
+</html>

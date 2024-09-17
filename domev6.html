@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <style>
+        #d1{
+            border: 2px solid;
+            width:300px;
+            height:300px;
+            font-size: 50px;
+            background-color: aqua;
+            text-align: center;
+            padding-top:100px;
+        }
+      </style>
+</head>
+<body>
+   <center> <div  id="d1" onclick="cha()"></div></center>
+    
+    <script>
+         var ar=["on","off"]
+         var i=0;
+         function cha(){
+            var x =document.getElementById("d1").innerHTML=ar[i]
+            i=(i+1)%ar.length
+         }
+    </script>
+</body>
+</html>

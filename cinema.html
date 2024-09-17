@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <h1 id="d3"></h1>
+        <script type="text/babel">
+            const x = [
+                { seatNumber: [11,12,13,14,15,16,17,18,19,20], seatName: 'A2', status: 'available', price: 20 },
+                { seatNumber: [21,22,23,24,25,26,27,28,29,30], seatName: 'A3', status: 'available', price: 20 },
+                { seatNumber: [31,32,33,34,35,36,37,38,39,40], seatName: 'A4', status: 'available', price: 20 },
+                { seatNumber: [41,42,43,44,45,46,47,48,49,50], seatName: 'A5', status: 'available', price: 20 },
+                { seatNumber: [51,52,53,54,55,56,57,58,59,60], seatName: 'A6', status: 'available', price: 20 },
+                { seatNumber: [61,62,63,64,65,66,67,68,69,70], seatName: 'A7', status: 'available', price: 20 },
+                { seatNumber: [71,72,73,74,75,76,77,78,79,80], seatName: 'A8', status: 'available', price: 20 },
+                { seatNumber: [81,82,83,84,85,86,87,88,89,90], seatName: 'A9', status: 'available', price: 20 },
+            ];
+
+            function yu(i) {
+                document.getElementById("d3").innerHTML = "Booked seats: " + i;
+            }
+
+            const h = (
+                <table>
+                    {x.map((r, i) => {
+                        return (
+                            <tr key={r.seatName}>
+                                <td>{r.seatName}</td>
+                                <td>
+                                    {r.seatNumber.map((e, j) => {
+                                        return (
+                                            <td key={e}><button onClick={() => yu(e)}style={{ backgroundColor: 'lightblue', padding: '5px', margin: '2px' }}>{e}</button></td>
+                                        );
+                                    })}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </table>
+            );
+
+            ReactDOM.render(h, document.getElementById("d1"));
+        </script>
+    </body>
+</html>

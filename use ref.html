@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+         #d2{
+            margin-top: 250px;
+            margin-left: 500px;
+         }
+        </style>    
+        </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            function Abc(){
+                var fref= React.useRef();
+                var sref=React.useRef();
+                var tref=React.useRef();
+                var gref=React.useRef();
+
+
+                React.useEffect(()=>{
+               fref.current.focus();
+                },[])
+               
+                function check(ev){
+                 
+                    sref.current.focus();
+                 
+                }
+
+                function ch(ev){
+                     
+                        tref.current.focus();
+                    
+                }
+                function c(ev){
+                    
+                      gref.current.focus();
+                    
+                }
+              return <div id="d2">
+                <input type="text" name="" id="" maxlength="1" ref={fref}style={{width:"30px", margin:"20px"}} onKeyUp={(e)=>{check(e)}}/>
+                <input type="text" name="" id="" maxlenth="1" style={{width:"30px", margin:"20px"}} ref={sref} onKeyUp={(e)=>{ch(e)}}/> 
+                <input type="text" name="" id=""   maxlength="1" style={{width:"30px",margin:"20px"}} ref={tref} onKeyUp={(e)=>{c(e)}}/>
+                <input type="text" name="" id="" maxlength="1"  style={{width:"30px",margin:"20px"}} ref={gref}/>
+                </div>
+            }
+         ReactDOM.render(<Abc/>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #d1{
+            border: 2px solid;
+            width: 300px;
+            height: 300px;
+            font-size: 50px;
+            text-align: center;
+            padding-top: 150px;
+
+        }
+    </style>
+</head>
+<body>
+   <div id="d1"></div> 
+   <button onclick="ab()">TRUE/FALSE</button>
+   <script>
+    var ar=["true","false"]
+    var i=0;
+    function ab(){
+        var d=document.getElementById("d1").innerHTML=ar[i]
+        i=(i+1)%ar.length
+    }
+   </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="url" id="ul">
+<button onclick="clk(event)">ok</button>
+
+
+<div id="dv"></div>
+
+<script>
+     var ar=[];
+    function clk(ev){
+        var a = document.getElementById("ul").value;
+        ar.push(a)
+
+        ar.forEach((x)=>{
+
+             var im= document.createElement("img")
+
+            im.src=x
+
+            document.getElementById("dv").appendChild(im)
+
+
+        })
+
+
+        console.log(ar)
+        
+
+        
+         console.dir(a)
+    }
+</script>
+    
+</body>
+</html>

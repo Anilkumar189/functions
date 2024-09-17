@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        
+    </head>
+    <body>
+        <div id="d1"></div>
+        <h1 id="d3"></h1>
+        <script type="text/babel">
+        var x=[
+    // { seatNumber:[1,2,3,4,5,6,7,8,9,10], seatName: 'A1', status: 'available', price: 20 },
+    { seatNumber: [11,12,13,14,15,16,17,18,19,20], seatName: 'A2', status: 'available', price: 20 },
+    { seatNumber: [21,22,23,24,25,26,27,28,29,30], seatName: 'A3', status: 'available', price: 20 },
+    { seatNumber: [31,32,33,34,35,36,37,38,39,40], seatName: 'A4', status: 'available', price: 20 },
+    { seatNumber: [41,42,43,44,45,46,47,48,49,50], seatName: 'A5', status: 'available', price: 20 },
+    { seatNumber: [51,52,53,54,55,56,57,58,59,60], seatName: 'A6', status: 'available', price: 20 },
+    { seatNumber: [61,62,63,64,65,66,67,68,69,70], seatName: 'A7', status: 'available', price: 20 },
+    { seatNumber: [71,72,73,74,75,76,77,78,79,80], seatName: 'A8', status: 'available', price: 20 },
+    { seatNumber:[81,82,83,84,85,86,87,88,89,90], seatName: 'A9', status: 'available', price: 20 },
+    // { seatNumber:[91,92,93,94,95,96,97,98,99,100], seatName: 'A10', status: 'available', price: 20 },
+    // { seatNumber:[101,102,103,104,105,106,107,108,109,110], seatName: 'D11', status: 'available', price: 10 },
+    // { seatNumber:[111,112,113,114,115,116,117,118,119,120], seatName: 'D12', status: 'available', price: 10 },
+    // { seatNumber:[121,122,123,124,125,126,127,128,129,130], seatName: 'D13', status: 'available', price: 10 },
+    // { seatNumber:[131,132,133,134,135,136,137,138,139,140], seatName: 'D14', status: 'available', price: 10 },
+    // { seatNumber:[141,142,143,144,145,146,147,148,149,150], seatName: 'D15', status: 'available', price: 10 },
+    // { seatNumber:[151,152,153,154,155,156,157,158,159,160], seatName: 'D16', status: 'available', price: 10 },
+    // { seatNumber:[161,162,163,164,165,166,167,168,169,170], seatName: 'D17', status: 'available', price: 10 },
+    // { seatNumber:[171,172,173,174,175,176,177,178,179,180], seatName: 'D18', status: 'available', price: 10 },
+    // { seatNumber:[181,182,183,184,185,186,187,188,189,190], seatName: 'D19', status: 'available', price: 10 },
+    // { seatNumber:[191,192,193,194,195,196,197,198,199,200], seatName: 'D20', status: 'available', price: 10 }
+];  
+
+function yu(i){
+    var z=document.getElementById("d3").innerHTML="bokked seats"+i;
+     
+
+}
+            var h=<table>{
+                x.map((r,i)=>{
+                    return <tr>
+                        <td>{r.seatName}</td>
+                        <td>{r.seatNumber.map((e,i)=>{
+                         return <td id="d2"><button onClick={()=>{yu(e)}}>{e}</button></td>
+                          
+                        })}</td>
+                        </tr>
+                })
+            }</table>
+
+             
+            ReactDOM.render(h,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

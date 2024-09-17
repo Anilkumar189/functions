@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .stopwatch {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stopwatch" id="stopwatch">00:00:00</div>
+    <div class="buttons">
+        <button id="startStop">Start</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <script>
+        let startTime, updatedTime, difference;
+        let interval;
+        let running = false;
+
+        const stopwatchDisplay = document.getElementById('stopwatch');
+        const startStopButton = document.getElementById('startStop');
+        const resetButton = document.getElementById('reset');
+
+        function startStopwatch() {
+            startTime = new Date().getTime();
+            interval = setInterval(updateStopwatch, 1000);
+            startStopButton.textContent = "Stop";
+        }
+
+        function stopStopwatch() {
+            clearInterval(interval);
+            running = false;
+            startStopButton.textContent = "Start";
+        }
+
+        function updateStopwatch() {
+            updatedTime = new Date().getTime();
+            difference = updatedTime - startTime;
+
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / (1000 * 60)) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            const formattedTime = 
+                (hours < 10 ? "0" : "") + hours + ":" + 
+                (minutes < 10 ? "0" : "") + minutes + ":" + 
+                (seconds < 10 ? "0" : "") + seconds;
+
+            stopwatchDisplay.textContent = formattedTime;
+        }
+
+        function resetStopwatch() {
+            clearInterval(interval);
+            stopwatchDisplay.textContent = "00:00:00";
+            startStopButton.textContent = "Start";
+            running = false;
+        }
+
+        startStopButton.addEventListener('click', function() {
+            if (!running) {
+                running = true;
+                startStopwatch();
+            } else {
+                stopStopwatch();
+            }
+        });
+
+        resetButton.addEventListener('click', resetStopwatch);
+    </script>
+    
+</body>
+</html>

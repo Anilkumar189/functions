@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            function Abc(){
+            var [count,setCount]=React.useState(0)
+            function inc(){
+                setCount(count+1);
+            }
+            function dec(){
+                setCount(count-1);
+
+            }
+            function re(){
+                setCount(count=0);
+            } 
+
+            React.useEffect(()=>{
+                console.log("use effect is called")
+            })
+            React.useEffect(()=>{
+                console.log("use effect is called")
+            })
+            React.useEffect(()=>{
+                console.log("use effect is called  with empty array called")
+            },[])
+            return <div> <h1>COUNT:{count}</h1>
+            <button onClick={()=>{inc()}}>INCREMENT</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button onClick={()=>{dec()}}>DECREMENT</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button onClick={()=>{re()}}>RESET</button>
+        </div>
+
+    
+         
+            }
+            function W(){
+        return <div>
+            <Abc></Abc>
+            <Abc></Abc>
+            <Abc></Abc>
+            <Abc></Abc>
+            
+            </div>
+     }
+            ReactDOM.render(<W/>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

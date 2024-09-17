@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <table cellpadding="20px" align="center" border="2px">
+    <thead>
+        <tr>
+
+            <td>name</td>
+            <td>age</td>
+            <td>gender</td>
+            <td>place</td>
+            <td>salary</td>
+        </tr>
+        <tbody id="d1">
+
+        </tbody>
+    </thead>
+   </table>
+</head>
+<body>
+    <script>
+        var ar=[
+            {
+           name:"anil",
+           age:25,
+           gender:"male",
+           place:"pasalapudi",
+           salary:500000
+        },
+        {
+           name:"mani",
+           age:25,
+           gender:"male",
+           place:"veling",
+           salary:500000
+        },
+        {
+           name:"butterfly",
+           age:20,
+           gender:"female",
+           place:"pasalapudi",
+           salary:50000
+        },
+        {
+           name:"virajitha",
+           age:25,
+           gender:"female",
+           place:"g.mamidada",
+           salary:500000
+        },
+        {
+           name:"raju",
+           age:25,
+           gender:"male",
+           place:"teku",
+           salary:50000
+        },
+        {
+           name:"lavanya",
+           age:20,
+           gender:"female",
+           place:"pasalapudi",
+           salary:5000
+        }, {
+           name:"sandya",
+           age:25,
+           gender:"female",
+           place:"kkd",
+           salary:5000
+        }
+    ]
+
+    ar.forEach((e)=>{
+        var tr=document.createElement("tr")
+        var td1=document.createElement("td")
+        tr.appendChild(td1)
+         td1.innerHTML=e.name
+
+         var td2=document.createElement("td")
+         td2.innerHTML=e.age
+         tr.appendChild(td2)
+
+         var td3=document.createElement("td")
+         td3.innerHTML=e.gender
+         tr.appendChild(td3)
+         
+
+         var td4=document.createElement("td")
+         td4.innerHTML=e.place
+         tr.appendChild(td4)
+
+
+         var td5=document.createElement("td")
+         td5.innerHTML=e.salary
+         tr.appendChild(td5)
+         
+        
+         if(e.gender==="female"){
+            tr.style.backgroundColor="red"
+         }
+         else{
+            tr.style.backgroundColor="green"
+         }
+         document.getElementById("d1").appendChild(tr)
+    })
+    </script>
+    
+</body>
+</html>

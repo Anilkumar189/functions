@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #d1{
+             display:inline-block;
+             width:5px;
+             height:5px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    
+    <script>
+        var ar=["https://pbs.twimg.com/media/FuYRHLpakAIGIIZ.jpg",
+            "https://m.media-amazon.com/images/S/pv-target-images/2f06b1fa5b4b22a55628a1971b7d56f0fc5c1a112a1b192bf9080a92e17ead1d.jpg",
+            "https://c.saavncdn.com/null/Darling-Prabhas-Telugu-2020-20201021112831-500x500.jpg",
+            "https://qph.cf2.quoracdn.net/main-qimg-5dbef442971b154d5b85330282171255"
+
+        ]
+        ar.forEach((e)=>{
+        
+        
+           
+           var mm=document.createElement("img")
+           mm.src=e;
+            var a =document.getElementById("d1")
+            a.appendChild(mm)
+           
+        })
+    </script>
+</body>
+</html>

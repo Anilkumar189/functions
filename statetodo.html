@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+           function Abc(){
+            var tRef=React.useRef();
+            var bRef=React.useRef();
+            
+            function add(){
+                var x=tRef.current.value;
+                setTodo([...todo,{
+                    title:x,
+                    status:false
+                }])
+            }
+            
+           function Ro(ind){
+            var tem=[...todo];
+            tem[ind].status=!tem[ind].status;
+            setTodo([...tem])
+           }
+             
+           function de(ind){
+            var mr=[...todo]
+             mr.splice(ind,1)
+             setTodo(mr)
+
+           }
+
+            var [todo, setTodo]=React.useState([
+                {
+                    title:"milk",
+                    status:false
+                },
+                {
+                    title:"milk",
+                    status:false
+                },
+                {
+                    title:"water",
+                    status:false
+                }
+            ])
+            React.useEffect(()=>{
+                tRef.current.focus();
+            })
+
+             function check(ev){
+               if(ev.key==="Enter"){
+                bRef.current.focus();
+               }
+
+             }
+           return <div> <input type="text" name="" ref={tRef} onKeyUp={(e)=>{check(e)}}/>
+            <button onClick={()=>{add()}} ref={bRef}>ADD TODO</button>
+            {
+                todo.map((k,ind)=>{
+                    return <li style={(k.status==true)?{textDecorationLine:"line-through",color:"red"}:{}}>{k.title}
+                        <button  onClick={()=>{Ro(ind)}}>DONE</button>
+                        <button onClick={()=>{de(ind)}}>DELETE</button>
+                        
+                        </li>
+
+                })
+            }
+            </div>
+           }
+
+           ReactDOM.render(<Abc></Abc>,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

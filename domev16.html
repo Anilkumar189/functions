@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+    #d1{
+        border: 2px soild;
+        width: 300px;
+        height: 300px;
+        margin-top: 200px;
+        margin-left: 500px;
+    }
+</style>
+</head>
+<body>
+    <!-- <div id="d1" onclick="a()"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fbhavanasain%2Fanushka-and-prabhas%2F&psig=AOvVaw3rg0EWhYRm2l9rQp1rGfff&ust=1724596674788000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNCij8bsjogDFQAAAAAdAAAAABAE" alt=""></div> -->
+    <img onclick="clk()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYiE6Q2h8yTLQ4heN9o6kSb7P681qAsbeC0A&s" alt="" id="d1">
+    <script>
+        var i=0;
+      var ar=[
+        src="https://images.hindustantimes.com/img/2024/08/17/1600x900/Prabhas_Imanvi_1723885179971_1723885214438.jpeg ",
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgxsFb83mmMyoz0XNTlVtuxNG1AdaI0erM2A&s",
+        src="https://img.mensxp.com/media/content/2023/Mar/prabhas-anushka-breakup-2_6401a4cb5f479.jpeg",
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0mohf0ij7S1NzjIIOeVOEm3BF7n3KHeliIQ&s",
+        src="https://images.filmibeat.com/img/2017/08/02-1501674492-24-1500875686-10-25-1495697716.jpg",
+        src="https://imagesvs.oneindia.com/webp/img/2024/02/prabhas-anushka-marriage-1706873476.jpg"
+      ]
+       function clk(ev){
+        var x=document.getElementById("d1")
+        x.src=ar[i++]
+        if(i==ar.length-1){i=0;}
+        
+       }
+    </script>
+</body>
+</html>

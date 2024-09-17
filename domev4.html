@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #d1{
+            border: 2px solid;
+            width: 300px;
+            height:300px;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div id="d1" onclick="color()"></div>
+    <script>
+        var ar=["blue","green","orange","yellow","purple","brown","gray","red","olive","maroon","violet",,"magenta","bronze","cream","tan","teal","black","mustard","navy blue","coral","burgundy","lavender","mauve","peach","rust","gold","pink","silver","cyan"]
+        var i=0;
+        function color(){
+            var x=document.getElementById("d1").style.backgroundColor=ar[i]
+            i=(i+1)%ar.length
+        }
+    </script>
+    
+</body>
+</html>

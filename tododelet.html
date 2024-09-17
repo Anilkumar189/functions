@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <style>
+        #d5{
+            display:none;
+
+        }
+        #d9{
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+   <center><h1 style="color: red;">TODO LIST</h1></center> 
+    <div id="d9">
+    <input type="text" name="" id="d4">
+    <button onclick="abc()"id="d2">ADDTODO</button>
+    <button onclick="xyz()"id="d5">UP DATE</button>
+    <ul id="d1"></ul>
+    </div>
+    <script>
+        var ar=[]
+        var eind=null;
+
+
+        function abc(){  
+        var x=document.getElementById("d4").value
+        if(x){
+            if(eind!==null){
+                ar[eind]=x;
+            }
+            else{
+                ar.push(x)    
+            }
+            
+            document.getElementById("d1").innerHTML=""
+            genUI();
+                document.getElementById("d4").value='';
+                document.getElementById("d2").style.display='inline';
+                document.getElementById("d5").style.display='none';
+           }
+        }
+        function genUI(){
+            ar.forEach(function (e,i){
+            var  nli=document.createElement("li")
+            nli.innerHTML=e
+
+
+
+
+
+            var btn2=document.createElement("button")
+         btn2.innerHTML="EDIT"
+         nli.appendChild(btn2)
+         btn2.onclick=function(){
+            document.getElementById("d4").value=e
+            document.getElementById("d2").style.display='none'
+            document.getElementById("d5").style.display='inline'
+            eind=i;
+            
+         }
+
+
+         var btn3=document.createElement("button")
+         btn3.innerHTML="done"
+         nli.appendChild(btn3)
+         btn3.onclick=function(){
+            nli.style.textDecorationLine="line-through"
+            nli.style.color="red"
+            btn3.style.display="none"
+         }
+        
+         var btn=document.createElement("button")
+         btn.innerHTML="delete"
+         nli.appendChild(btn)
+         btn.onclick=function(){
+            ar.splice(i,1)
+            document.getElementById('d1').innerHTML='';
+        genUI()
+         }
+          
+
+         document.getElementById("d1").appendChild(nli)
+        
+        }) 
+    }
+    function xyz(){
+        abc()
+    }
+    </script>
+</body>
+</html>

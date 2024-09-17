@@ -1,0 +1,60 @@
+ <html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+        function Abc(){
+            var [todo,setTodo]=React.useState([{
+                title:"water",
+                status:false
+            },
+            {
+                title:"milk",
+                status:false
+            },
+            {
+                title:"sonnu",
+                status:false
+            }
+        ])
+        
+            function addtodo(){
+                var x=document.getElementById("d2").value;
+                setTodo([...todo,{title:x,status:false}]) 
+
+
+            }
+            function Abc(ind){
+                // alert(ind)
+            var temp=[...todo];
+             temp[ind].status=!temp[ind].status;
+             setTodo([...temp])
+
+        }
+         function de(ind){
+            var v=[...todo];
+            v.splice(ind,1);
+            setTodo(v);
+ 
+         }
+            return <div>
+                 <input type="text" id="d2"/>
+                 <button onClick={()=>{addtodo()}}>ADD TODO</button>
+                 {
+                    todo.map((r,ind)=>{
+                      return <li style={r.status==true?{textDecorationLine:"line-through",color:"red"}:{}}>{r.title}
+                        <button onClick={()=>{Abc(ind)}}>DONE</button>
+                        <button onClick={()=>{de(ind)}}>DELETE</button>
+                        </li>
+                    })
+                 }
+                </div>
+            }
+                ReactDOM.render(<Abc></Abc>,document.getElementById("d1"))
+        </script>
+    </body>
+ </html>

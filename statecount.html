@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Abc(props){
+                var [count,setCount]=React.useState(props.ind);
+                function inc(){
+                    setCount(count+props.d);
+                }
+                function dec(){
+                    setCount(count-props.e);
+    
+                }
+                function res(){
+                    setCount(count=props.ind);
+                }
+            return (<div>
+                    <h1>COUNT:{count}</h1>
+                    <button onClick={()=>{inc()}}>increment</button>
+                    <button onClick={()=>{dec()}}>decrement</button>
+                    <button onClick={()=>{res()}}>reset</button>
+
+                </div>)
+
+         }
+         function A(){
+             return <div>
+            <Abc ind={3} d={2} e={2}></Abc>
+           <Abc ind={7} d={4} e={4}></Abc>
+            <Abc ind={10} d={8} e={8}></Abc>
+            
+            </div>
+             
+
+         }
+         ReactDOM.render(<A/>,document.getElementById("root"))
+
+        var a=5;
+        var b=++a;
+        var c= a + b;
+        console.log(c)
+        </script>
+    </body>
+</html>  

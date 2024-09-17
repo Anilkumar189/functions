@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ass(x,y,z){
+            if(x<y){
+                if(x<z){
+                    if(y<z){
+                        console.log(x,y,z)
+                    }
+                    else{
+                        console.log(x,z,y)
+                    }
+                }
+                else{
+                    console.log(z,x,y)
+                }
+            }
+            if(y<x){
+                if(z<x){
+                    console.log(y,z,x)
+                }
+                else{
+                    console.log(y,x,z)
+                }
+            }
+            else{
+                console.log(z,y,x)
+            }
+        }
+        var c=ass(1,2,3)
+        console.log(c)
+    </script>
+</body>
+</html>

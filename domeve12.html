@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <style>
+        #d1{
+            width: 30%;
+            height: 30%;
+
+         display: inline-block;
+        }
+        #d2{
+            width: 30%;
+            height: 30%;
+            display: inline-block;
+        }
+        #d3{
+            width: 30%;
+            height:none;
+            display: inline-block;
+        }
+        #d4{
+            width: 30%;
+            height: 30%;
+            display: inline-block;
+            border: 2px ssolid;
+        }
+     </style>
+</head>
+<body>
+    <div id="d1"  onclick="pa()"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Nokota_Horses_cropped.jpg" alt=""width="100%"></div>
+    <div id="d2" onclick="ma()"><img src="https://www.thesprucepets.com/thmb/RO6O0Wy3YsA199mPCera1lotyVk=/1500x0/filters:no_upscale():strip_icc()/GettyImages-997016774-aa793802ceda4c3ba4819e9469de5136.jpg" alt=""width="100%"></div>
+    <div id="d3" onclick="aa()"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Goat_by_Sans.jpg/1200px-Goat_by_Sans.jpg" width=""100%></div>
+   <center> <div><img src="" alt="" id="d4"></div></center>
+    <script>
+        function pa(){
+            var x=document.querySelector("#d4")
+            x.src="https://upload.wikimedia.org/wikipedia/commons/d/de/Nokota_Horses_cropped.jpg"
+        }
+        function ma(){
+            var z=document.querySelector("#d4")
+            z.src="https://www.thesprucepets.com/thmb/RO6O0Wy3YsA199mPCera1lotyVk=/1500x0/filters:no_upscale():strip_icc()/GettyImages-997016774-aa793802ceda4c3ba4819e9469de5136.jpg"
+        }
+        function aa(){
+            var c=document.querySelector("#d4")
+            c.src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Goat_by_Sans.jpg/1200px-Goat_by_Sans.jpg"
+        }
+    </script>
+</body>
+</html>

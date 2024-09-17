@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <input type="file" onchange="abc(event)">
+    <div id="d1"></div>
+    <script>
+        function abc(ev){
+            document.getElementById("d1").innerHTML=""
+      var x=URL.createObjectURL(ev.target.files[0])
+      var y=document.createElement("img")
+      y.style.width="200px"
+      y.style.height="200px"
+      y.src=x
+      document.getElementById("d1").appendChild(y)
+        }
+    </script>
+</body>
+</html>

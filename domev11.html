@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <style>
+        #d1{
+            width: 50%;
+            height: 1%;
+        }
+     </style>
+</head>
+<body>
+    <center>
+    <div><img id="d1" src="https://i.postimg.cc/KjK1wL3c/bulb-off.png"></div>
+    <button onclick="on()">on</button>
+    <button onclick="off()">off</button>
+</center>
+    <script>
+        function off(){
+            var x=document.getElementById("d1")
+            x.src="https://i.postimg.cc/KjK1wL3c/bulb-off.png"
+        }
+        function on(){
+            var z=document.getElementById("d1")
+            z.src="https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg "
+        }
+    </script>
+</body>
+</html>

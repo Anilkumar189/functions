@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #d1{
+            border: 2px soild;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body></center>
+    <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Love_Story_Poster.jpeg/220px-Love_Story_Poster.jpeg" alt="" id="d1"></div>
+    <button onclick="p()">prev</button>
+    <button onclick="n()">next</button>
+    
+    <center>
+    <script>
+        var ar=[src="https://m.media-amazon.com/images/M/MV5BM2RlOGMxMTgtYzcyOC00ZmVlLWI1YzktNjljMjllMDNiZDEzXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg",
+            src="https://cdn.siasat.com/wp-content/uploads/2023/06/Sai-Pallavi-2-660x495.jpg",
+            src="https://sc0.blr1.digitaloceanspaces.com/large/845266-64413-igphqxmvii-1501356944.jpg",
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TlSJJoayGnxCWL5BvY17XtvDit8XHhbKcQ&s"
+        ]
+        var i=0;
+         function n(){
+             var x=document.getElementById("d1")
+             x.src=ar[i++]
+             if(i==ar.length-1){
+                i=0
+             }
+         }
+          function p(){
+            var u=document.getElementById("d1")
+            u.src=ar[i--]
+            
+            }
+          
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+        function pali(x){
+            var c=x;
+            var rev=0;
+        while(x>0){
+             var rem=x%10;
+            rev=rev*10+rem;
+            x=Math.floor(x/10);
+        }
+        if(c==rev){
+            console.log( "it's working priya");
+        }
+        else{
+            console.log("not working priya");
+        }
+          console.log(rev)
+        }
+        var s=pali(121)
+    </script>
+</body>
+</html>

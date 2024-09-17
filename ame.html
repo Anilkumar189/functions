@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function st(c){
+            var sum=0;
+            var s=c;
+            while(s>0){
+             var  rem=s%10;
+              sum=sum+rem*rem*rem;
+              s=Math.floor(s/10); 
+            }
+             if(sum==c){
+                console.log("amestrong number");
+             }
+             else{
+                console.log("not amestrong number");
+             }
+
+        }
+        var x=st(+prompt());
+        console.log(x)
+    </script>
+</body>
+</html>

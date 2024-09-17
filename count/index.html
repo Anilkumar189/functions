@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <style>
+        #d2{
+          
+            width:400px;
+            height: 400px;
+            margin-left: 35%;
+          margin-top:10%;
+          box-shadow: 20px 20px 20px rgb(90, 91, 92);
+          background-color: #dadbd5;
+            
+        }
+        #d4{
+          font-size: 80px;
+          padding-top:25%;
+        }
+        #b1{
+          border-radius: 5%;
+          border: 0px solid;
+          font-size: 20px;
+          color: beige;
+        
+        }
+        #b2{
+          border-radius: 5%;
+          border: 0px solid;
+          font-size: 20px;
+          color: aliceblue;
+        }
+        #b3{
+          border-radius: 5%;
+          border: 0px solid;
+          font-size: 20px;
+          color: aliceblue;
+      
+        }
+     </style>
+</head>
+<body>
+  <div id="d2">
+    <center>
+    <h1 id="d4">count:<span id="d1"></span></h1>
+    <button id="b1" onclick="inc()" style="background-color: green; margin: 10px;">increment</button>
+    <button id="b2" onclick="dec()" style="background-color: red;margin: 10px;">decrement</button>
+    <button id="b3" onclick="re()" style="background-color:black; margin: 10px;">reset</button>
+</center>
+</div>
+    <script>
+        var c=0;
+        document.getElementById("d1").innerHTML=c
+        document.getElementById("d1").style.color="black"
+          function inc(){
+            c++;
+            document.getElementById("d1").innerHTML=c
+            document.getElementById("d1").style.color="green"
+          }
+           function dec(){
+            c--; 
+            document.getElementById("d1").innerHTML=c
+            document.getElementById("d1").style.color="red"
+           }
+             function re(){
+               c=0;
+             document.getElementById("d1").innerHTML=c
+           document.getElementById("d1").style.color="black"
+             
+             }
+
+
+    </script>
+</body>
+</html>

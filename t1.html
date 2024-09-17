@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <input type="text" name="" id="d1">
+    <button onclick="abc()">ADD TODO</button>
+    <ul id="d2"></ul>
+ 
+    <script>
+        var ar=[]
+        function abc(){
+            
+            var x=document.getElementById("d1").value 
+            ar.push(x)
+            ab();
+        }
+            function ab(){
+                document.getElementById("d2").innerHTML=""
+            ar.forEach((e,r)=>{
+                var nli=document.createElement("li")
+                nli.innerHTML=e;
+ 
+
+
+                var btn1=document.createElement("button")
+                btn1.innerHTML="DELETE"
+                nli.appendChild(btn1)
+                btn1.onclick=function(){
+                    ar.splice(r,1)
+                    ab();
+                }
+                document.getElementById("d2").appendChild(nli)
+            
+            })
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

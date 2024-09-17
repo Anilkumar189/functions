@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+        
+                function Nanna(){
+                    var nref=React.useRef();
+                    var bref=React.useRef();
+                    var aref=React.useRef();
+                     
+                    React.useEffect(()=>{
+                        nref.current.focus();
+                    },[])
+                      function check(e){
+                        if(e.key==="Enter"){
+                            bref.current.focus();
+                        }
+                      }
+
+                       
+                 return <div style={{border:"2px solid red",padding:"20px",width:"500px",marrgin:"10px"}}>
+                 <input type="text" name="" id="" ref={nref} onKeyUp={(e)=>{check(e)}}/>
+                 <Child r={bref}/>
+                 <input type="text" name="" id="" ref={aref}/>
+                </div>
+                }
+                 function Child(props){
+                    return <div style={{border:"2px solid green",width:"400px",padding:"20px",margin:"20px"}}>
+                        <input type="text" name="" id="" ref={props.r}/>
+                        
+                        </div>
+                 }
+
+
+                ReactDOM.render(<Nanna/>,document.getElementById("d1"))
+
+        </script>
+    </body>
+</html>

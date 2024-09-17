@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #d0{
+            margin-left: 500px;
+            margin-top: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="d0">
+    <input type="text" name="" id="d4">
+    <button onclick="abc()" style="background-color: aqua;">ADD TODO</button>
+    <ol id="d1"></ol>
+</div>
+
+    <script>
+        var ar=[]
+        function abc(){
+            document.getElementById("d1").innerHTML=""
+            var x=document.getElementById("d4").value 
+            ar.push(x)
+            ar.forEach((t)=>{
+                var nli=document.createElement("li")
+                nli.innerHTML=t;
+                nli.style.color="green"
+                document.getElementById("d1").appendChild(nli)
+
+            })
+        }
+    </script>
+</body>
+</html>

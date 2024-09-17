@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        var rem=0;
+        var rev=0
+        function rec(s){
+            while(s>0){
+         rem=s%10;
+         rev=rev*10+rem;
+         s=Math.floor(s/10);
+        
+            }
+            return rev;
+        }
+        var x= rec(1234);
+        console.log(x)
+    </script>
+</body>
+</html>
